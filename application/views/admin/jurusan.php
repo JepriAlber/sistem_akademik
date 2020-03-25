@@ -13,17 +13,7 @@
                   <div class="card-header">
                     <h4 class="d-inline">Data Jurusan</h4>
                     <div class="card-header-action">
-                      <?=anchor('admin/jurusan/input','<div class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm"> Tambah Barang</i></div>')  ?>
-                       <a href="" class="btn btn-sm btn-danger shadow-sm"> <i class="fa fa-print"> Print</i></a>
-                         <div class="dropdown d-inline mr-2">
-                          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-download"></i>
-                            Export
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="">PDF</a>
-                            <a class="dropdown-item" href="">EXCEL</a>
-                          </div>
-                        </div>
+                      <?=anchor('admin/jurusan/input','<div class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm"> Tambah Jurusan</i></div>')  ?>
                 </div>
                   </div>
                   <div class="card-body">
