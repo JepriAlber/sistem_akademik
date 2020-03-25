@@ -66,5 +66,61 @@ class Jurusan extends CI_Controller
 			'required' => 'Nama Jurusan Tidak Boleh Kosong'
 		]);
 	}
+
+	public function edit($id)
+	{
+		$where = array('id_jurusan' => $id);
+
+		$data['jurusan'] 			= $this->Jurusan_model->Edit_data($where,'jurusan')->result();
+
+		$datajudul['judul'] 	= 'Edit Jurusan';
+
+			$this->load->view('includesAdmin/header',$datajudul);
+ 			$this->load->view('includesAdmin/navbar');
+ 			$this->load->view('includesAdmin/sidebar');
+ 			$this->load->view('admin/edit_jurusan',$data);
+ 			$this->load->view('includesAdmin/footer');
+	}
+
+	public function edit_aksi()
+	{
+		$id = $this->input->post('id_jurusan');
+		$kode_jurusan = $this->input->post('kode_jurusan');
+		$nama_jurusan = $this->input->post('nama_jurusan');
+
+		$data = array(
+			'kode_jurusan'	=> $kode_jurusan,
+			'nama_jurusan' 	=> $nama_jurusan
+		);
+
+		$where = array(
+			'id_jurusan' => $id
+		);
+
+		$this->Jurusan_model->Update_data($where,$data,'jurusan');
+		$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
+		              <strong>Data Jurusan Berhasil Diedit</strong>
+		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                <span aria-hidden="true">&times;</span>
+		              </button>
+		            </div>');
+ 		redirect('admin/jurusan');
+	}
+
+	public function hapus($id)
+	{
+		$where = array(
+			'id_jurusan' => $id
+		);
+
+		$this->Jurusan_model->Hapus_data($where,'jurusan');
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		              <strong>Data Jurusan Berhasil Dihapus</strong>
+		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                <span aria-hidden="true">&times;</span>
+		              </button>
+		            </div>');
+ 		redirect('admin/jurusan');
+	}
 }
 ?>

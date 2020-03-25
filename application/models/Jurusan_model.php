@@ -13,5 +13,22 @@ class Jurusan_model extends CI_Model
 	{
 		$this->db->insert('jurusan',$data);
 	}
+
+	public function Edit_data($where,$table)
+	{
+		return $this->db->get_where($table,$where);
+	}
+
+	public function Update_data($where, $data, $table)
+	{
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+
+	public function Hapus_data($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 }
 ?>
