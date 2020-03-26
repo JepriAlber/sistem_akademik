@@ -15,8 +15,8 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-university"></i> <span> Akademik</span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?=base_url('admin/jurusan') ?>">Jurusan</a></li> 
-                <li><a href="">Program Studi</a></li> 
+                <li><a href="<?=base_url('admin/jurusan'); ?>">Jurusan</a></li> 
+                <li><a href="<?=base_url('admin/prodi'); ?>">Program Studi</a></li> 
                 <li><a href="">Mata Kuliah</a></li> 
                 <li><a href="">Mahasiswa</a></li>
                 <li><a href="">Tahun Akademik</a></li>
