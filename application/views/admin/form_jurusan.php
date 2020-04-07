@@ -13,7 +13,7 @@
               <h4>Tambah Jurusan</h4>
             </div>
             <div class="card-body">
-                <form action="<?=base_url().'admin/jurusan/input_aksi'?>" method="POST">
+                <form action="<?=base_url('admin/jurusan/input_aksi')?>" method="POST">
                 <div class="form-group">
                   <label for="kode_jurusan">Kode Jurusan :</label>
                   <input type="text" name="kode_jurusan" class="form-control " id="kode_jurusan">

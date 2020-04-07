@@ -2,7 +2,7 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <i class="fas fa-university mr-2"></i><h1> Jurusan</h1>
+            <i class="fas fa-university mr-2"></i><h1> Prodi</h1>
           </div>
 
           <div class="section-body">
@@ -13,7 +13,7 @@
                   <div class="card-header">
                     <h4 class="d-inline">Data Prodi</h4>
                     <div class="card-header-action">
-                      <?=anchor('admin/prodi/input','<div class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm"> Tambah Prodi</i></div>')  ?>
+                      <?=anchor('admin/prodi/Tambah_prodi','<div class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm"> Tambah Prodi</i></div>')  ?>
                 </div>
                   </div>
                   <div class="card-body">
