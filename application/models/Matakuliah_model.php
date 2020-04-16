@@ -13,5 +13,29 @@ class Matakuliah_model extends CI_model{
 	{
 		$this->db->insert($table,$data);
 	}
+
+	public function Ambil_kode_matakuliah($kode)
+	{
+		$result 	= $this->db->where('kode_matakuliah',$kode)->get('matakuliah');
+
+		if ($result->num_rows() > 0 ) {
+			return $result->result();
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function Update_data($where,$data,$table)
+	{
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+
+	public function Hapus_data($where,$table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 }
 ?>
