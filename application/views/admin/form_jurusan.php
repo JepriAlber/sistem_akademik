@@ -28,6 +28,7 @@
                     <button class="btn btn-primary mr-1" type="submit" onclick="return confirm('Apakah ada yakin ingin Simpan data ini?')">Simpan</button>
                   </div>     
                 </form>
+              </div>
           </div>
         </div>
       </div>
