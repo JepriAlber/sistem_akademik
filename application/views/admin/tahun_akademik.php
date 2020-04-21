@@ -2,7 +2,7 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <i class="fas fa-university mr-2"></i><h1> Jurusan</h1>
+            <i class="fas fa-university mr-2"></i><h1> Tahun Akademik</h1>
           </div>
 
           <div class="section-body">
@@ -11,9 +11,9 @@
               <div class="col-12 col-md-6 col-lg-12">
                 <div class="card card-primary">
                   <div class="card-header">
-                    <h4 class="d-inline">Data Jurusan</h4>
+                    <h4 class="d-inline">Data Tahun Akademik</h4>
                     <div class="card-header-action">
-                      <?=anchor('admin/jurusan/input','<div class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm"> Tambah Jurusan</i></div>')  ?>
+                      <?=anchor('admin/TahunAkademik/input','<div class="btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm"> Tambah Tahun Akademik</i></div>')  ?>
                 </div>
                   </div>
                   <div class="card-body">
@@ -22,25 +22,27 @@
                         <thead>
                            <tr>
   		                      <th>NO </th>
-  		                      <th>KODE JURUSAN</th>
-  		                      <th>NAMA JURUSAN</th>
+  		                      <th>TAHUN AKADEMIK</th>
+  		                      <th>SEMESTER</th>
+                            <th>STATUS</th>
   		                      <th colspan="2" class="text-center">OPTION</th>
   		                    </tr>
                  		 </thead>
 		                  <tbody>
 		                     <?php
                             $no=1; 
-                            foreach ($jurusan as $jrs): 
+                            foreach ($tahunakademik as $tmik): 
                           ?> 
 		                    	<tr>
 			                      <th width="20px"><?=$no++; ?></th>
-			                      <td><?=$jrs->kode_jurusan; ?></td>
-			                      <td><?=$jrs->nama_jurusan; ?></td>
+			                      <td><?=$tmik->tahun_akademik; ?></td>
+			                      <td><?=$tmik->semester; ?></td>
+                            <td><?=$tmik->status; ?></td>
 			                      <td width="20px">
-			                      	<?=anchor('admin/jurusan/edit/'.$jrs->id_jurusan, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
+			                      	<?=anchor('admin/tahunakademik/edit/'.$tmik->id, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
 			                      </td>
                             <td width="20px">
-                              <?=anchor('admin/jurusan/hapus/'.$jrs->id_jurusan, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
+                              <?=anchor('admin/tahunakademik/hapus/'.$tmik->id, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
                             </td>
 		                    	</tr>
 		                    <?php endforeach ?>

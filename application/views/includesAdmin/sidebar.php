@@ -19,7 +19,7 @@
                 <li><a href="<?=base_url('admin/prodi'); ?>">Program Studi</a></li> 
                 <li><a href="<?=base_url('admin/matakuliah'); ?>">Mata Kuliah</a></li> 
                 <li><a href="<?=base_url('admin/mahasiswa'); ?>">Mahasiswa</a></li>
-                <li><a href="">Tahun Akademik</a></li>
+                <li><a href="<?=base_url('admin/tahunakademik'); ?>">Tahun Akademik</a></li>
                 <li><a href="">KRS</a></li>
                 <li><a href="">Input Nilai</a></li>
                 <li><a href="">KHS</a></li>

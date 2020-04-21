@@ -45,7 +45,7 @@
 			                      	<?=anchor('admin/mahasiswa/edit/'.$mhs->id, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
 			                      </td>
                             <td width="20px">
-                              <?=anchor('admin/mahasiswa/hapus/'.$mhs->id, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Details</div>')?> 
+                              <?=anchor('admin/mahasiswa/hapus/'.$mhs->id, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
                             </td>
 		                    	</tr>
 		                    <?php endforeach ?>
