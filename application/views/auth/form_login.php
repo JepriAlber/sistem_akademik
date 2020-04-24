@@ -16,7 +16,7 @@
                 <form method="POST" action="<?=base_url('admin/auth/proses_login') ?>" >
                   <div class="form-group">
                     <label for="username">username</label>
-                    <input id="username" type="text" class="form-control" name="username" >
+                    <input id="username" type="text" class="form-control"  name="username" autofocus>
                     <small class="form-text text-danger"><?=form_error('username'); ?></small>
                   </div>
 
@@ -24,7 +24,7 @@
                     <div class="d-block">
                     	<label for="password" class="control-label">Password</label>
                     </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" >
+                    <input id="password" type="password" class="form-control" name="password" tabindex="2" autofocus>
                      <small class="form-text text-danger"><?=form_error('password'); ?></small>
                    </div>
 
