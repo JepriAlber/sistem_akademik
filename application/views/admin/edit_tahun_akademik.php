@@ -18,7 +18,7 @@
 
                 <div class="form-group">
                   <label for="tahun_akademik">Tahun Akademik :</label>
-                  <input type="hidden" name="id" id="id" value="<?=$ta->id; ?>">
+                  <input type="hidden" name="id_ta" id="id_ta" value="<?=$ta->id_ta; ?>">
                   <input type="text" name="tahun_akademik" class="form-control " id="tahun_akademik" value="<?=$ta->tahun_akademik; ?>">
                   <small class="form-text text-danger"><?=form_error('tahun_akademik'); ?></small>
                 </div>

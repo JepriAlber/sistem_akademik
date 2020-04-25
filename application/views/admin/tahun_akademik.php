@@ -39,10 +39,10 @@
 			                      <td><?=$tmik->semester; ?></td>
                             <td><?=$tmik->status; ?></td>
 			                      <td width="20px">
-			                      	<?=anchor('admin/tahunakademik/edit/'.$tmik->id, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
+			                      	<?=anchor('admin/tahunakademik/edit/'.$tmik->id_ta, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
 			                      </td>
                             <td width="20px">
-                              <?=anchor('admin/tahunakademik/hapus/'.$tmik->id, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
+                              <?=anchor('admin/tahunakademik/hapus/'.$tmik->id_ta, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
                             </td>
 		                    	</tr>
 		                    <?php endforeach ?>

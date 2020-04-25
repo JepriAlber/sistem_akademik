@@ -58,7 +58,7 @@ class TahunAkademik extends CI_Controller
 
 	public function edit($id)
 	{
-		$where 	= array('id' => $id);
+		$where 	= array('id_ta' => $id);
 		
 		$data['tahunakademik'] 	= $this->TahunAkademik_model->Show($id);
 		$datajudul['judul']		= 'Update Tahun Akademik';
@@ -75,15 +75,15 @@ class TahunAkademik extends CI_Controller
 		$this->_rules();
 
 			if ($this->form_validation->run() == FALSE) {
-				$this->edit($this->input->post('id',TRUE));
+				$this->edit($this->input->post('id_ta',TRUE));
 			} else {
-				$id 				= $this->input->post('id',TRUE);
+				$id 				= $this->input->post('id_ta',TRUE);
 				$tahunakademik  	= $this->input->post('tahun_akademik',TRUE);
 				$semester 			= $this->input->post('semester',TRUE);
 				$status 			= $this->input->post('status',TRUE);
 
 					$where 	= array(
-						'id' => $id
+						'id_ta' => $id
 					);
 
 					$data 	= array(
@@ -106,7 +106,7 @@ class TahunAkademik extends CI_Controller
 
 	public function hapus($id)
 	{
-		$where 	= array('id' => $id);
+		$where 	= array('id_ta' => $id);
 		$this->TahunAkademik_model->Hapus_data($where,'tahun_akademik');
 		$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
 		              <strong>Data Tahun Akademik Berhasil DiHapus</strong>

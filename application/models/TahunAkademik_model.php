@@ -17,7 +17,7 @@ class TahunAkademik_model extends CI_Model
 
 	public function Show($id)
 	{
-		$result = $this->db->where('id', $id)->get('tahun_akademik');
+		$result = $this->db->where('id_ta', $id)->get('tahun_akademik');
 
 			if ($result->num_rows() > 0) {
 				return $result->result();
