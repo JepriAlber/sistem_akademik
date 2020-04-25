@@ -26,7 +26,7 @@
                 <div class="form-group">
                   <label for="semester">Semester :</label>
                   <select name="semester" id="semester" class="form-control">
-                    <option value="<?=$ta->id; ?>"><?=$ta->semester; ?></option>
+                    <option value="<?=$ta->semester; ?>"><?=$ta->semester; ?></option>
                     <option value="Ganjil">Ganjil</option>
                     <option value="Genap">Genap</option>
                   </select>
