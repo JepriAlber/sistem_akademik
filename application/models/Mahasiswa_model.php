@@ -4,6 +4,11 @@
  */
 class Mahasiswa_model extends CI_Model
 {
+
+	public $table 	= 'mahasiswa';
+	public $npm 	= 'npm';
+
+
 	public function Tampil_data($table)
 	{
 		return $this->db->get($table);
@@ -11,7 +16,7 @@ class Mahasiswa_model extends CI_Model
 
 	public function Ambil_data_mahasiswa($id)
 	{
-		$result		= $this->db->where('id',$id)->get('mahasiswa');
+		$result		= $this->db->where('id',$id)->get($this->table);
 
 			if ($result->num_rows() > 0) {
 				return $result->result();
@@ -36,6 +41,12 @@ class Mahasiswa_model extends CI_Model
 	{
 		$this->db->where($where);
 		$this->db->delete($table);
+	}
+
+	public function get_by_id($npm)
+	{
+		$this->db->where($this->npm,$npm);
+		return $this->db->get($this->table)->row();
 	}
 }
 ?>

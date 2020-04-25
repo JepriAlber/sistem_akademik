@@ -5,6 +5,9 @@
 class TahunAkademik_model extends CI_Model
 {
 	
+	public $table 	= 'tahun_akademik';
+	public $id 		= 'id_ta';
+
 	public function Tampil_data($table)
 	{
 		return $this->db->get($table);
@@ -17,7 +20,7 @@ class TahunAkademik_model extends CI_Model
 
 	public function Show($id)
 	{
-		$result = $this->db->where('id_ta', $id)->get('tahun_akademik');
+		$result = $this->db->where($this->id, $id)->get($this->table);
 
 			if ($result->num_rows() > 0) {
 				return $result->result();
@@ -37,6 +40,12 @@ class TahunAkademik_model extends CI_Model
 	{
 		$this->db->where($where);
 		$this->db->delete($table);
+	}
+
+	public function get_by_id($id)
+	{
+		$this->db->where($this->id, $id);
+		return $this->db->get($this->table)->row();
 	}
 
 }
