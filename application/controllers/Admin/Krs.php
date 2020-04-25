@@ -91,5 +91,25 @@ class Krs extends CI_Controller
 		]);
 	}
 
+	public function tambah_krs($npm,$thn_akad)
+	{
+		$data 	= array(
+			'id_krs'			=> set_value('id_krs'),
+			'id_ta'				=> $thn_akad,
+			'tahun_akademik'	=> $this->TahunAkademik_model->get_by_id($thn_akad)->tahun_akademik,
+			'semester'			=> $this->TahunAkademik_model->get_by_id($thn_akad)->semester==1?'Ganjil':'Genap',
+			'npm'				=> $npm,
+			'kode_matakuliah'	=> set_value('kode_matakuliah')
+		);
+
+		$datajudul['judul']		= 'Tambah Data KRS';
+
+			$this->load->view('includesAdmin/header',$datajudul);
+ 			$this->load->view('includesAdmin/navbar');
+ 			$this->load->view('includesAdmin/sidebar');
+ 			$this->load->view('admin/form_krs',$data);
+ 			$this->load->view('includesAdmin/footer');
+	}
+
 }
 ?>

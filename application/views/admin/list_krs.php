@@ -37,7 +37,7 @@
                           </tr>
                       </table>
                       <div class="card-header-action">
-                      <?=anchor('admin/krs/tambah_krs','<div class="btn btn-sm btn-primary shadow-sm float-right mb-2"><i class="fas fa-plus fa-sm"> Tambah Data KRS</i></div>')  ?>
+                      <?=anchor('admin/krs/tambah_krs/'.$npm.'/'.$id_ta,'<div class="btn btn-sm btn-primary shadow-sm float-right mb-2"><i class="fas fa-plus fa-sm"> Tambah Data KRS</i></div>')  ?>
                       <?=anchor('admin/krs/print','<div class="btn btn-sm btn-info shadow-sm float-right mr-2"><i class="fas fa-print fa-sm"> Print KRS</i></div>')  ?>
                     </div>
                     <div class="table-responsive mt-2">
@@ -47,13 +47,14 @@
   		                      <th>NO </th>
   		                      <th>KODE MATA KULIAH</th>
   		                      <th>NAMA MATA KULIAH</th>
-                            <th>NAMA SKS</th>
+                            <th>SKS</th>
   		                      <th colspan="2" class="text-center">OPTION</th>
   		                    </tr>
                  		 </thead>
 		                  <tbody>
                         <?php 
-                        $no = 1;
+                        $no         = 1;
+                        $jumlahSks  = 0;
                         foreach ($krs_data as $krs): ?>
                           <tr>
                             <td width="20px"><?=$no++;?></td>
@@ -71,11 +72,11 @@
                               <?=anchor('admin/krs/hapus/'.$krs->id_krs, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
                             </td>
                           </tr>
-                          <tr>
+                        <?php endforeach ?>
+                        <tr>
                             <td colspan="3" align="right"><strong>Jumlah SKS</strong></td>
                             <td><strong><?=$jumlahSks; ?></strong></td>
-                          </tr>
-                        <?php endforeach ?>
+                        </tr>
                       </tbody>
                       </table>
                     </div>
