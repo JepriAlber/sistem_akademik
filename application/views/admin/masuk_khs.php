@@ -2,7 +2,7 @@
 <div class="main-content">
   <section class="section">
     <div class="section-header">
-      <i class="fas fa-university mr-2"></i><h1>Masuk ke Halaman KRS</h1>
+      <i class="fas fa-university mr-2"></i><h1> Masuk Ke Halaman KHS</h1>
     </div>
 
     <div class="section-body">
@@ -11,10 +11,10 @@
         <div class="col-12 col-md-6 col-lg-12">
           <div class="card">
             <div class="card-header">
-              <h4>Masuk ke Halaman KRS</h4>
+              <h4>Masuk ke Halama KHS</h4>
             </div>
             <div class="card-body">
-                <form action="<?=base_url('admin/krs/krs_aksi')?>" method="POST">
+                <form action="<?=base_url('admin/nilai/nilai_aksi')?>" method="POST">
 
                   <div class="form-group">
                   <label for="npm">NPM Mahasiswa :</label>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="tahun_akademik">Tahun Akademik / Semester :</label>
+                  <label for="id_ta">Tahun Akademik / Semester :</label>
                   <?php  
                     $query      = $this->db->query('SELECT id_ta, semester,CONCAT(tahun_akademik,"/") AS thn_semester FROM tahun_akademik');
                     $dropdowns   = $query->result(); 
@@ -39,7 +39,7 @@
 
                          echo form_dropdown('id_ta',$dropDownList,'', 'class="form-control" id="id_ta"');
                   ?>
-                  <small class="form-text text-danger"><?=form_error('tahun_akademik'); ?></small>
+                  <small class="form-text text-danger"><?=form_error('id_ta'); ?></small>
                 </div>
 
                 <div class="card-footer text-right">
