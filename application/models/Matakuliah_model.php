@@ -4,6 +4,9 @@
  */
 class Matakuliah_model extends CI_model{
 
+	public $table 	= 'matakuliah';
+	public $kode 	= 'kode_matakuliah';
+
 	public function Tampil_data($table)
 	{
 		return $this->db->get($table);
@@ -36,6 +39,12 @@ class Matakuliah_model extends CI_model{
 	{
 		$this->db->where($where);
 		$this->db->delete($table);
+	}
+
+	public function get_by_id($kode)
+	{
+		$this->db->where($this->kode,$kode);
+		return $this->db->get($this->table)->row();
 	}
 }
 ?>
