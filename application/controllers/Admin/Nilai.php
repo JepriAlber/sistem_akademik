@@ -150,7 +150,7 @@ class Nilai extends CI_Controller
 		// $id_krs = $_POST['id_krs'];
 		// $nilai  = $_POST['nilai'];
 
-			for ($i=0;$i >sizeof($id_krs); $i++) { 
+			for ($i=0;$i < sizeof($id_krs); $i++) { 
 				$query = $this->db->set('nilai', $nilai[$i])->where('id_krs',$id_krs[$i])->update('krs');
 			}
 	

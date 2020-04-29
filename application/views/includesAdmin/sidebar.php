@@ -23,7 +23,7 @@
                 <li><a href="<?=base_url('admin/krs'); ?>">KRS</a></li>
                 <li><a href="<?=base_url('admin/nilai/input_nilai'); ?>">Input Nilai</a></li>
                 <li><a href="<?=base_url('admin/nilai'); ?>">KHS</a></li>
-                <li><a href="">Cetak Transkip</a></li>
+                <li><a href="<?=base_url('admin/transkrip_nilai'); ?>">Cetak Transkrip</a></li>
                 <li><a href="">Dosen</a></li> 
               </ul>
             </li>
