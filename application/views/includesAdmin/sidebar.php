@@ -24,7 +24,7 @@
                 <li><a href="<?=base_url('admin/nilai/input_nilai'); ?>">Input Nilai</a></li>
                 <li><a href="<?=base_url('admin/nilai'); ?>">KHS</a></li>
                 <li><a href="<?=base_url('admin/transkrip_nilai'); ?>">Cetak Transkrip</a></li>
-                <li><a href="">Dosen</a></li> 
+                <li><a href="<?=base_url('admin/dosen'); ?>">Dosen</a></li> 
               </ul>
             </li>
             <li class="dropdown">
