@@ -39,13 +39,13 @@
 			                      <td><?=$dsn->nama_dosen; ?></td>
                             <td><?=$dsn->email; ?></td>
                             <td width="20px">
-                              <?=anchor('admin/mahasiswa/details/'.$dsn->id_dosen, '<div class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Details</div>')?> 
+                              <?=anchor('admin/dosen/details/'.$dsn->id_dosen, '<div class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Details</div>')?> 
                             </td>
 			                      <td width="20px">
-			                      	<?=anchor('admin/mahasiswa/edit/'.$dsn->id_dosen, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
+			                      	<?=anchor('admin/dosen/edit/'.$dsn->id_dosen, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
 			                      </td>
                             <td width="20px">
-                              <?=anchor('admin/mahasiswa/hapus/'.$dsn->id_dosen, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
+                              <?=anchor('admin/dosen/hapus/'.$dsn->id_dosen, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
                             </td>
 		                    	</tr>
 		                    <?php endforeach ?>
