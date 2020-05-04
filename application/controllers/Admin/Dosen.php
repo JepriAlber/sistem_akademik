@@ -49,7 +49,6 @@ class Dosen extends CI_Controller
 		$this->_rulesDosen();
 
 		if ($this->form_validation->run() == FALSE) {
-			print_r($_POST);die();
 			$this->input();
 		} else {
 			
@@ -100,6 +99,79 @@ class Dosen extends CI_Controller
  				redirect('admin/dosen');
 		}
 		
+	}
+
+	public function edit($id)
+	{
+		$data['dosen']	 		= $this->Dosen_model->Ambil_data_dosen($id);
+		$datajudul['judul']		= 'Update Data Dosen';
+
+			$this->load->view('includesAdmin/header',$datajudul);
+ 			$this->load->view('includesAdmin/navbar');
+ 			$this->load->view('includesAdmin/sidebar');
+ 			$this->load->view('admin/edit_dosen',$data);
+ 			$this->load->view('includesAdmin/footer');
+	}
+
+	public function update_aksi()
+	{
+		$this->_rulesDosen();
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->edit();
+			} else {
+
+				$id_dosen 		= $this->input->post('id_dosen',TRUE);
+				$nidn			= $this->input->post('nidn',TRUE);
+				$nama_dosen		= $this->input->post('nama_dosen',TRUE);
+				$jenis_kelamin	= $this->input->post('jenis_kelamin',TRUE);
+				$email 			= $this->input->post('email', TRUE);
+				$telp			= $this->input->post('telp',TRUE);
+				$alamat			= $this->input->post('alamat',TRUE);
+				$photo			= $_FILES['userfile']['name'];
+			
+					if ($photo) {
+						$config['upload_path']			= './assets/uploads';
+						$config['allowed_types']		= 'png|jpg|gif|tiff';
+					
+						$this->load->library('upload', $config);
+						if ($this->upload->do_upload('userfile')) {
+							$userfile = $this->upload->data('file_name');
+							$this->db->set('photo',$userfile);
+						} else {
+							$this->session->set_flashdata('pesan','<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					              <strong>Gagal Mengupload Foto</strong>
+					              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					                <span aria-hidden="true">&times;</span>
+					              </button>
+					            </div>'); 
+			 				redirect('admin/mahasiswa');
+						}
+					}
+
+				$data 	= array(
+					'nidn'				=> $nidn,
+					'nama_dosen'		=> $nama_dosen,
+					'alamat'			=> $alamat,
+					'email'				=> $email,
+					'telp'				=> $telp,
+					'jenis_kelamin'		=> $jenis_kelamin,
+				);
+
+				$where 	= array(
+					'id_dosen' => $id_dosen
+				);
+				
+				$this->Dosen_model->Update_data($where,$data,'dosen');
+				$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
+		              <strong>Data Dosen Berhasil DiUpdate</strong>
+		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		                <span aria-hidden="true">&times;</span>
+		              </button>
+		            </div>');
+				redirect('admin/dosen');
+			}
+			
 	}
 
 	public function _rulesDosen()
