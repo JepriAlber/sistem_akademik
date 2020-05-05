@@ -1,4 +1,4 @@
-    <div class="main-sidebar sidebar-style-2">
+z    <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
             <a href="<?=base_url(); ?>"><i class="fas fa-university"></i> SISTEM-AKADEMIK</a>
@@ -30,7 +30,7 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-wrench"></i> <span> Pengaturan</span></a>
               <ul class="dropdown-menu">
-                <li><a href="">User</a></li> 
+                <li><a href="<?=base_url('admin/user') ?>">User</a></li> 
                 <li><a href="">Menu</a></li> 
               </ul>
             </li>
