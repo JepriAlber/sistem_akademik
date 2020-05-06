@@ -80,35 +80,42 @@ class User extends CI_Controller
 
 	public function update_user_aksi()
 	{
-		$id 				= $this->input->post('id',TRUE);
-		$username 			= $this->input->post('username',TRUE);
-		$password 			= md5($this->input->post('password',TRUE));
-		$email 				= $this->input->post('email',TRUE);
-		$level 				= $this->input->post('level',TRUE);
-		$blokir 			= $this->input->post('blokir',TRUE);
-		$id_session 		= md5($this->input->post('id_session',TRUE));
+		$this->_rules()
 
-			$data 			= array(
-				'username'		=> $username,
-				'password'		=> $password,
-				'email'			=> $email,
-				'level'			=> $level,
-				'blokir'		=> $blokir,
-				'id_session'	=> $id_session
-			);
+			if ($this->form_validation->run() == FALSE) {
+				$this->update($this->input->post('id',TRUE));
+			} else {
+				$id 				= $this->input->post('id',TRUE);
+				$username 			= $this->input->post('username',TRUE);
+				$password 			= md5($this->input->post('password',TRUE));
+				$email 				= $this->input->post('email',TRUE);
+				$level 				= $this->input->post('level',TRUE);
+				$blokir 			= $this->input->post('blokir',TRUE);
+				$id_session 		= md5($this->input->post('id_session',TRUE));
 
-			$where 			= array(
-				'id'			=>$id
-			);
+					$data 			= array(
+						'username'		=> $username,
+						'password'		=> $password,
+						'email'			=> $email,
+						'level'			=> $level,
+						'blokir'		=> $blokir,
+						'id_session'	=> $id_session
+					);
 
-			$this->User_model->update_data($where,$data);
-			$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
-		              <strong>Data User Berhasil Diupdate</strong>
-		              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		                <span aria-hidden="true">&times;</span>
-		              </button>
-		            </div>');
- 				redirect('admin/user'); 
+					$where 			= array(
+						'id'			=>$id
+					);
+
+					$this->User_model->update_data($where,$data);
+					$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
+				              <strong>Data User Berhasil Diupdate</strong>
+				              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				                <span aria-hidden="true">&times;</span>
+				              </button>
+				            </div>');
+		 				redirect('admin/user'); 
+			}
+			
 	}
 
 	public function _rules()

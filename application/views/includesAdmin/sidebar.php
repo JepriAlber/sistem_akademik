@@ -37,7 +37,7 @@ z    <div class="main-sidebar sidebar-style-2">
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-folder"></i> <span> Info Kampus</span></a>
               <ul class="dropdown-menu">
-                <li><a href="">Identitas</a></li> 
+                <li><a href="<?=base_url('admin/identitas'); ?>">Identitas</a></li> 
                 <li><a href="">Kategori</a></li>
                  <li><a href="">Tentang Kampus</a></li>
                  <li><a href="">Fasilitas</a></li>
