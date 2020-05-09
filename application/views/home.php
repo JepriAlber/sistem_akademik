@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>UNIVERSITAS BAHAGIA</title>
+  <title>Layout &rsaquo; Top Navigation &mdash; Stisla</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="<?=base_url('assets/modules/bootstrap/css/bootstrap.min.css'); ?>">
@@ -30,17 +30,17 @@
   <div id="app">
     <div class="main-wrapper container">
       <div class="navbar-bg"></div>
-      <?php foreach ($identitas as $iden): ?>
-        <nav class="navbar navbar-expand-lg main-navbar">
-        <a href="index.html" class="navbar-brand sidebar-gone-hide"><?=$iden->judul_website; ?></a>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <a href="index.html" class="navbar-brand sidebar-gone-hide">Stisla</a>
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
         <div class="nav-collapse">
           <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
             <i class="fas fa-ellipsis-v"></i>
           </a>
           <ul class="navbar-nav">
-            <li class="nav-item active"><a href="#" class="nav-link"><?=$iden->alamat; ?></a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><?=$iden->email; ?> / <?=$iden->telp; ?></a></li>
+            <li class="nav-item active"><a href="#" class="nav-link">Application</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Report Something</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Server Status</a></li>
           </ul>
         </div>
         <form class="form-inline ml-auto">
@@ -55,66 +55,20 @@
               <div class="search-header">
                 Histories
               </div>
-              <div class="search-item">
-                <a href="#">How to hack NASA using CSS</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
-              </div>
-              <div class="search-item">
-                <a href="#">Kodinger.com</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
-              </div>
-              <div class="search-item">
-                <a href="#">#Stisla</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
-              </div>
-              <div class="search-header">
-                Result
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-3-50.png" alt="product">
-                  oPhone S9 Limited Edition
-                </a>
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-2-50.png" alt="product">
-                  Drone X2 New Gen-7
-                </a>
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-1-50.png" alt="product">
-                  Headphone Blitz
-                </a>
-              </div>
-              <div class="search-header">
-                Projects
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <div class="search-icon bg-danger text-white mr-3">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  Stisla Admin Template
-                </a>
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <div class="search-icon bg-primary text-white mr-3">
-                    <i class="fas fa-laptop"></i>
-                  </div>
-                  Create a new Homepage Design
-                </a>
-              </div>
             </div>
           </div>
         </form>
         <ul class="navbar-nav navbar-right">
-          <a href="" class="btn btn-sm btn-warning ml-2">Login</a> 
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <div class="d-sm-none d-lg-inline-block">Login</div></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="#" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-in-alt"></i> LOGIN
+              </a>
+            </div>
+          </li>
         </ul>
       </nav>
-      <?php endforeach ?>
 
       <nav class="navbar navbar-secondary navbar-expand-lg">
         <div class="container">
@@ -139,34 +93,11 @@
             </li>
           </ul>
         </div>
-         
       </nav>
-       
+
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="<?=base_url('assets/img/kampus.jpg') ?>" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="<?=base_url('assets/img/kampus.jpg') ?>" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
           <div class="section-header">
             <h1>Top Navigation</h1>
             <div class="section-header-breadcrumb">
@@ -209,7 +140,7 @@
     </div>
   </div>
 
-  <!-- General JS Scripts -->
+<!-- General JS Scripts -->
   <script src="<?=base_url('assets/modules/jquery.min.js'); ?>"></script>
   <script src="<?=base_url('assets/modules/popper.js'); ?>"></script>
   <script src="<?=base_url('assets/modules/tooltip.js'); ?>"></script>
