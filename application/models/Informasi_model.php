@@ -2,14 +2,19 @@
 /**
  * 
  */
-class TentangKampus_model extends CI_Model
+class Informasi_model extends CI_Model
 {
-	public $table		= 'tentang_kampus';
-	public $id			= 'id';
+	public $table 		= 'informasi';
+	public $id 			= 'id_informasi';
 
 		public function Tampil_data()
 		{
 			return $this->db->get($this->table);
+		}
+
+		public function Tambah_data($data)
+		{
+			$this->db->insert($this->table,$data);
 		}
 
 		public function Ambil_data($id)
@@ -23,5 +28,10 @@ class TentangKampus_model extends CI_Model
 			$this->db->update($this->table,$data);
 		}
 
+		public function Hapus_data($id)
+		{
+			$this->db->where(array($this->id => $id));
+			$this->db->delete($this->table);
+		}
 }
 ?>

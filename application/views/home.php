@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Layout &rsaquo; Top Navigation &mdash; Stisla</title>
+  <title>UNIVERSITAS KEBAHAGIAN</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="<?=base_url('assets/modules/bootstrap/css/bootstrap.min.css'); ?>">
@@ -30,19 +30,20 @@
   <div id="app">
     <div class="main-wrapper container">
       <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar">
-        <a href="index.html" class="navbar-brand sidebar-gone-hide">Stisla</a>
+        <nav class="navbar navbar-expand-lg main-navbar">
+          <?php foreach ($identitas as $iden): ?>
+        <a href="index.html" class="navbar-brand sidebar-gone-hide"><?=$iden->judul_website; ?></a>
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
         <div class="nav-collapse">
           <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
             <i class="fas fa-ellipsis-v"></i>
           </a>
           <ul class="navbar-nav">
-            <li class="nav-item active"><a href="#" class="nav-link">Application</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Report Something</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Server Status</a></li>
+            <li class="nav-item active"><a href="#" class="nav-link"><?=$iden->alamat; ?></a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><?=$iden->email; ?> / <?=$iden->telp; ?></a></li>
           </ul>
         </div>
+        <?php endforeach ?>
         <form class="form-inline ml-auto">
           <ul class="navbar-nav">
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
@@ -60,36 +61,35 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <div class="d-sm-none d-lg-inline-block">Login</div></a>
+            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block">Login sini!</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="#" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-in-alt"></i> LOGIN
+              <a href="<?=base_url('admin/auth'); ?>" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-in-alt"></i> Login
               </a>
             </div>
           </li>
         </ul>
-      </nav>
-
-      <nav class="navbar navbar-secondary navbar-expand-lg">
+      </nav>      <nav class="navbar navbar-secondary navbar-expand-lg">
         <div class="container">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>BERANDA</span></a>
+              <a href="#" class="nav-link"><i class="fas fa-user"></i><span>BERANDA</span></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>FASILITAS</span></a>
+              <a href="#" class="nav-link"><i class="fas fa-th-large"></i><span>FASILITAS</span></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>INFORMASI</span></a>
+              <a href="#" class="nav-link"><i class="fas fa-laptop"></i><span>INFORMASI</span></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>TENTANG KAMPUS</span></a>
+              <a href="#" class="nav-link"><i class="fas fa-history"></i><span>TENTANG KAMPUS</span></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>GALLERY</span></a>
+              <a href="#" class="nav-link"><i class="fas fa-images"></i><span>GALLERY</span></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>KONTAK</span></a>
+              <a href="#" class="nav-link"><i class="fas fa-inbox"></i><span>KONTAK</span></a>
             </li>
           </ul>
         </div>
@@ -97,44 +97,93 @@
 
       <!-- Main Content -->
       <div class="main-content">
+
         <section class="section">
           <div class="section-header">
-            <h1>Top Navigation</h1>
-            <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-              <div class="breadcrumb-item"><a href="#">Layout</a></div>
-              <div class="breadcrumb-item">Top Navigation</div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="<?=base_url('assets/img/UniversitasKebahagian1.png') ?>" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="<?=base_url('assets/img/UniversitasKebahagian2.png') ?>" class="d-block w-100" alt="...">
+              </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-
-          <div class="section-body">
-            <h2 class="section-title">This is Example Page</h2>
-            <p class="section-lead">This page is just an example for you to create your own page.</p>
-            <div class="card">
+          </div>
+<!--   -----------------------Tentang Kampus----------------------------- -->
+          <div class="card text-center">
               <div class="card-header">
-                <h4>Example Card</h4>
+                <h4>TENTANG KAMPUS</h4>
               </div>
               <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <?php foreach ($tentang as $ttg): ?>
+                  <p><?=word_limiter($ttg->sejarah,10); ?></p>
+                <?php endforeach ?>
               </div>
-              <div class="card-footer bg-whitesmoke">
-                This is card footer
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#selanjutnya">Selengkapnya..</button>
+              <div class="card-footer text-muted">
               </div>
-            </div>
           </div>
+<!--       ------------------------Informasi Kampus------------------------ -->
+        <di class="row text-center mt-3 ml-1">
+            <?php foreach ($informasi as $info): ?>
+              <div class="card ml-1" style="width: 17rem;">
+                <span class="display-2 text-center text-info">
+                  <i class="<?=$info->icon; ?>"></i>
+                </span>
+                <div class="card-body">
+                  <h5 class="card-title"><?=$info->judul_informasi; ?></h5>
+                  <p class="card-text"><?=$info->isi_informasi; ?></p>
+                </div>
+              </div> 
+            <?php endforeach ?>
+          </di>
         </section>
       </div>
+          <!-- Modal -->
+          <div class="modal fade" id="selanjutnya" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Tentang Kampus</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <?php foreach ($tentang as $ttg): ?>
+                      <h6>Sejarah Kampus</h6>
+                        <p><?=$ttg->sejarah; ?></p>
+                      <h6>Visi</h6>
+                        <p><?=$ttg->visi; ?></p>
+                      <h6>Misi</h6>
+                        <p><?=$ttg->misi; ?></p>
+                    <?php endforeach ?>
+                </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+          Copyright &copy; 2020 <div class="bullet"></div> Design By <a href="">Jepri Alber</a>
         </div>
         <div class="footer-right">
-          
         </div>
       </footer>
     </div>

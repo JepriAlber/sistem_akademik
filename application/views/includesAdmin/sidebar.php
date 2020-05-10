@@ -39,7 +39,7 @@ z    <div class="main-sidebar sidebar-style-2">
               <ul class="dropdown-menu">
                   <li><a href="<?=base_url('admin/identitas'); ?>">Identitas</a></li> 
                   <li><a href="">Kategori</a></li>
-                  <li><a href="">Informasi Kampus</a></li>
+                  <li><a href="<?=base_url('admin/informasi'); ?>">Informasi Kampus</a></li>
                  <li><a href="<?=base_url('admin/tentangkampus');?> ">Tentang Kampus</a></li>
                  <li><a href="">Fasilitas</a></li>
                  <li><a href="">Materi Perkuliahan</a></li>

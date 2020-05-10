@@ -80,7 +80,7 @@ class User extends CI_Controller
 
 	public function update_user_aksi()
 	{
-		$this->_rules()
+		$this->_rules();
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->update($this->input->post('id',TRUE));
