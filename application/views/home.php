@@ -61,8 +61,7 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Login sini!</div></a>
+            <div class="d-sm-none d-lg-inline-block">Hey, Login sini!!</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <a href="<?=base_url('admin/auth'); ?>" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-in-alt"></i> Login
@@ -124,7 +123,7 @@
           </div>
           </div>
 <!--   -----------------------Tentang Kampus----------------------------- -->
-          <div class="card text-center">
+          <div class="card text-center card-primary">
               <div class="card-header">
                 <h4>TENTANG KAMPUS</h4>
               </div>
@@ -133,14 +132,14 @@
                   <p><?=word_limiter($ttg->sejarah,10); ?></p>
                 <?php endforeach ?>
               </div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#selanjutnya">Selengkapnya..</button>
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#selanjutnya">Selengkapnya..</button>
               <div class="card-footer text-muted">
               </div>
           </div>
 <!--       ------------------------Informasi Kampus------------------------ -->
         <di class="row text-center mt-3 ml-1">
             <?php foreach ($informasi as $info): ?>
-              <div class="card ml-1" style="width: 17rem;">
+              <div class="card ml-1 card-primary" style="width: 17rem;">
                 <span class="display-2 text-center text-info">
                   <i class="<?=$info->icon; ?>"></i>
                 </span>
@@ -151,6 +150,39 @@
               </div> 
             <?php endforeach ?>
           </di>
+<!--       ----------------------------Hubungi Kami ------------------------------- -->
+              <?=$this->session->flashdata('pesan'); ?>
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-12">
+                  <div class="card card-primary">
+                    <div class="card-header">
+                      <h4 class="d-inline">Hubungi Kami..</h4>
+                    </div>
+                    <div class="card-body">
+                      <form action="<?=base_url('home/kirim_pesan')?>" method="POST">
+                        
+                        <div class="form-group">
+                          <label for="nama">Nama :</label>
+                          <input type="txt" name="nama" id="nama" class="form-control">
+                          <small class="form-text text-danger"><?=form_error('nama'); ?></small>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email :</label>
+                          <input type="email" name="email" id="email" class="form-control">
+                          <small class="form-text text-danger"><?=form_error('email'); ?></small>
+                        </div>
+                        <div class="form-group">
+                          <label for="pesan">Pesan :</label>
+                          <textarea name="pesan" id="pesan" class="form-control"></textarea>
+                          <small class="form-text text-danger"><?=form_error('pesan'); ?></small>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Kirim</button>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </section>
       </div>
           <!-- Modal -->
