@@ -24,5 +24,10 @@ class Hubungi_model extends CI_Model
 			$this->db->delete($this->table);
 		}
 
+		public function Ambil_data($id)
+		{
+			return $this->db->get_where($this->table,array($this->id => $id));
+		}
+
 }
 ?>

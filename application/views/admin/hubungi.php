@@ -36,7 +36,7 @@
 			                      <td><?=$hub->email; ?></td>
                             <td><?=$hub->pesan; ?></td>
 			                      <td width="20px">
-			                      	<?=anchor('admin/hubungi/edit/'.$hub->id_hubungi, '<div class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</div>')?>	
+			                      	<?=anchor('admin/hubungi/balas_email/'.$hub->id_hubungi, '<div class="btn btn-warning btn-sm"><i class="fas fa-comment-dots"></i> Balas</div>')?>	
 			                      </td>
                             <td width="20px" onclick="return confirm('Apakah ada yakin ingin Menghapus data ini?')">
                               <?=anchor('admin/hubungi/hapus/'.$hub->id_hubungi, '<div class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</div>')?> 
