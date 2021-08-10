@@ -52,18 +52,6 @@ class Hubungi extends CI_Controller
 				$subject			= $this->input->post('subject',TRUE);
 				$pesan 				= $this->input->post('pesan',TRUE);
 
-				// $config 			= [
-				// 	'mailtype'		=> 'html',
-				// 	'charset'		=> 'UTF-8',
-				// 	'protocol'		=> 'smtp',
-				// 	'smtp_host'		=> 'ssl://smtp.gmail.com',
-				// 	'smtp_user'		=> 'pustakakata49@gmail.com',
-				// 	'smtp_pass'		=> '2119697sama',
-				// 	'smtp_post'		=> 465,
-				// 	'crlf'			=> "\r\n",
-				// 	'newline'		=> "\r\n"
-				// ];
-					
 				$config = Array(
 				  'protocol' 	=> 'smtp',
 				  'smtp_host'	=> 'smtp.mailtrap.io',
